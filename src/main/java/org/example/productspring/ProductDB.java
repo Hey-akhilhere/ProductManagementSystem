@@ -11,6 +11,8 @@ import java.util.List;
 @Repository
 public interface ProductDB extends JpaRepository<Product, Integer> {
 
+    Product save(Product product);
+
 
     Product findByName(String name);
 

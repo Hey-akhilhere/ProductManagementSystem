@@ -3,15 +3,20 @@ package org.example.productspring;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class ProductService{
 
     @Autowired
     ProductDB db;
+
+
+    public void addProduct(Product product){
+       db.save(product);
+    }
 
     public List<Product> getallproducts(){
         return db.findAll();
